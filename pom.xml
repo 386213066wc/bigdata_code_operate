@@ -13,6 +13,7 @@
         <module>hadoop_opt</module>
         <module>MR_opt</module>
         <module>java_opt</module>
+        <module>hive_function</module>
     </modules>
 
     <properties>

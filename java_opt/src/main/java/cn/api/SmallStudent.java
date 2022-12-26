@@ -4,6 +4,4 @@ public class SmallStudent {
     private int arm;
     private int eyes;
 
-
-
 }
