@@ -58,7 +58,6 @@ public class UDTFSplit  extends GenericUDTF {
             // 将集合内容写出
             forward(outList);
         }
-
     }
 
     @Override
