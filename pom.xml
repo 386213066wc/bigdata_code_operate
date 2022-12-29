@@ -14,6 +14,8 @@
         <module>MR_opt</module>
         <module>java_opt</module>
         <module>hive_function</module>
+        <module>flink_sql_opt</module>
+        <module>hbase_api</module>
     </modules>
 
     <properties>

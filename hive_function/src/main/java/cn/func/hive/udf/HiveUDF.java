@@ -14,12 +14,6 @@ import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectIn
  * abcd   ===> UDF  ==>  4
  */
 public class HiveUDF extends GenericUDF {
-
-
-
-
-
-
     /***
      * 初始化的方法
      * @param arguments
