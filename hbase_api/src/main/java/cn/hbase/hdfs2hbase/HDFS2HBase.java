@@ -49,7 +49,6 @@ public class HDFS2HBase {
             context.write(new ImmutableBytesWritable(Bytes.toBytes(split[0])), put);
         }
     }
-
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         Configuration conf = HBaseConfiguration.create();
         // 设定zk集群

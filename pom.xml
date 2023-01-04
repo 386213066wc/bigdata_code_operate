@@ -16,6 +16,7 @@
         <module>hive_function</module>
         <module>flink_sql_opt</module>
         <module>hbase_api</module>
+        <module>Flume_opt</module>
     </modules>
 
     <properties>

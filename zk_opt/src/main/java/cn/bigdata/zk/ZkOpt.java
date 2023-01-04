@@ -2,10 +2,7 @@ package cn.bigdata.zk;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
-import org.apache.curator.framework.recipes.cache.ChildData;
-import org.apache.curator.framework.recipes.cache.TreeCache;
-import org.apache.curator.framework.recipes.cache.TreeCacheEvent;
-import org.apache.curator.framework.recipes.cache.TreeCacheListener;
+import org.apache.curator.framework.recipes.cache.*;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZooDefs;
@@ -48,38 +45,36 @@ public class ZkOpt {
        //设置监听机制
 
 
-        TreeCache treeCache = new TreeCache(curatorFramework, "/test02");
-        treeCache.getListenable().addListener(new TreeCacheListener() {
+        CuratorCache curatorCache = CuratorCache.build(curatorFramework, "/test02");
+
+        curatorCache.listenable().addListener(new CuratorCacheListener() {
             @Override
-            public void childEvent(CuratorFramework client, TreeCacheEvent event) throws Exception {
-                ChildData data = event.getData();
-                if(data !=null){
-                    switch (event.getType()){
-                        case NODE_ADDED:
-                            System.out.println("node added " +  data.getPath() + "数据为" + new String(data.getData()));
-                            break;
-                        case NODE_REMOVED:  //删除节点
-                            System.out.println("NODE_REMOVED : "+ data.getPath() +"  数据:"+ new String(data.getData()));
-                            break;
+            public void event(Type type, ChildData oldData, ChildData data) {
+                switch (type){
+                    case NODE_CHANGED:
+                        String node_name = data.getPath().replace("/test02", "");
+                        System.out.println("变更节点名称为" + node_name);
+                        System.out.println("变更节点数据为" + new String(data.getData()));
 
-                        case NODE_UPDATED:  //修改节点
-                            System.out.println("NODE_UPDATED : "+ data.getPath() +"  数据:"+ new String(data.getData()));
+                        break;
+                    case NODE_CREATED:
+                        String node_name2 = data.getPath().replace("/test02", "");
+                        System.out.println("变更节点名称为" + node_name2);
+                        System.out.println("变更节点数据为" + new String(data.getData()));
 
-                            break;
-
-                        default:
-
-                            break;
-
-                    }
+                        break;
+                    case NODE_DELETED:
+                        String node_name3 = data.getPath().replace("/test02", "");
+                        System.out.println("变更节点名称为" + node_name3);
+                        System.out.println("变更节点数据为" + new String(data.getData()));
+                        break;
+                    default:
+                        break;
                 }
-
-
             }
         });
 
-        treeCache.start();//开始监听
-
+        curatorCache.start();
         Thread.sleep(Integer.MAX_VALUE);
 
         curatorFramework.close();

@@ -15,7 +15,6 @@ import java.io.IOException;
 public class LoadData {
 
     public static void main(String[] args) throws IOException {
-
         Configuration configuration = HBaseConfiguration.create();
         configuration.set("hbase.zookeeper.quorum","bigdata01,bigdata02,bigdata03");
         Connection connection = ConnectionFactory.createConnection(configuration);
