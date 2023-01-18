@@ -1,0 +1,4 @@
+# Project exclude paths
+/hadoop_opt/target/
+/MR_opt/target/
+/zk_opt/target/
