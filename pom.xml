@@ -18,6 +18,7 @@
         <module>hbase_api</module>
         <module>Flume_opt</module>
         <module>kafka_opt</module>
+        <module>spark_code</module>
     </modules>
 
     <properties>

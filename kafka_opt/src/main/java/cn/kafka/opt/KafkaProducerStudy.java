@@ -11,15 +11,9 @@ public class KafkaProducerStudy {
      * @param args
      */
     public static void main(String[] args) {
-
-
      /*
-
        topic的信息是存储在zk里面了
-
-
         数据的压缩是在broker里面进行了压缩，如果consumer来消费的时候，会自动的进行解压缩
-
       Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9092");
         props.put("acks", "all");
@@ -27,11 +21,7 @@ public class KafkaProducerStudy {
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         // 开启 GZIP 压缩
         props.put("compression.type", "gzip");*/
-
      //   Producer<String, String> producer = new KafkaProducer<>(props);
-
-
-
 
         Properties props = new Properties();
         props.put("bootstrap.servers", "bigdata01:9092,bigdata02:9092,bigdata03:9092");
