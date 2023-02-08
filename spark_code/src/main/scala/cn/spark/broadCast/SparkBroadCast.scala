@@ -27,7 +27,6 @@ object SparkBroadCast {
     val proudctAndOrderRdd: RDD[String] = ordersRDD.mapPartitions(eachPartition => {
       //获得广播变量的值
       val getBroadCastMap: collection.Map[String, String] = broadCastValue.value
-
       val finalStr: Iterator[String] = eachPartition.map(eachLine => {
         //eachLine 样本数据 1001,20150710,p0001,2
         val ordersGet: Array[String] = eachLine.split(",")

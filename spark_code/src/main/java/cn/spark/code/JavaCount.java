@@ -56,16 +56,12 @@ public class JavaCount {
             }
         });
         Tuple2<String, String> stringStringTuple2 = new Tuple2<>("hello", "world");
-
         //调用了collect之后，收集回来的数据，存放在Driver端，默认最大收集1GB数据，超过1GB，丢掉，但是1GB的数据，Driver端能不能存的下
         List<Tuple2<String, Integer>> collect = wordAndTotal.collect();
         for (Tuple2<String, Integer> stringIntegerTuple2 : collect) {
             System.out.println(stringIntegerTuple2._1);
             System.out.println(stringIntegerTuple2._2);
         }
-
         javaSparkContext.stop();
-
     }
-
 }
