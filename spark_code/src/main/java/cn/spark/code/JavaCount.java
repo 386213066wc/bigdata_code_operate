@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class JavaCount {
-    public static void main(String[] args) {
+    public static void main(String[] args) {/*
         //获取SparkCOntext
         SparkConf sparkConf = new SparkConf().setAppName("sparkCount")
                 .setMaster("local[*]");
@@ -62,6 +62,6 @@ public class JavaCount {
             System.out.println(stringIntegerTuple2._1);
             System.out.println(stringIntegerTuple2._2);
         }
-        javaSparkContext.stop();
+        javaSparkContext.stop();*/
     }
 }
