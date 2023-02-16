@@ -19,6 +19,7 @@
         <module>Flume_opt</module>
         <module>kafka_opt</module>
         <module>spark_code</module>
+        <module>spark_source_code</module>
     </modules>
 
     <properties>
