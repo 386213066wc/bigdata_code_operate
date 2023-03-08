@@ -14,7 +14,7 @@ import java.util.List;
 
 public class UDTFSplit  extends GenericUDTF {
 
-    private ArrayList<String> outList = new ArrayList<>();
+    private ArrayList<String> outList = new ArrayList<String>();
 
 
     /**

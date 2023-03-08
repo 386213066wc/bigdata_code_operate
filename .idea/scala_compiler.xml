@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="Maven 1" modules="flink_sql_opt" />
+    <profile name="Maven 1" modules="flink_sql_opt,spark_source_code" />
     <profile name="Maven 2" modules="spark_code">
       <parameters>
         <parameter value="-dependencyfile" />
         <parameter value="E:\1、课程内容\1、课程资料\bigdata_code_operate\spark_code\target/.scala_dependencies" />
+      </parameters>
+    </profile>
+    <profile name="Maven 3" modules="flink_mode">
+      <parameters>
+        <parameter value="-target:jvm-1.8" />
       </parameters>
     </profile>
   </component>
