@@ -21,6 +21,7 @@
         <module>spark_code</module>
         <module>spark_source_code</module>
         <module>flink_mode</module>
+        <module>flink_hudi_cdc</module>
     </modules>
 
     <properties>

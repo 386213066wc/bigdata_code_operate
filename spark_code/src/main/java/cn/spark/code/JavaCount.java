@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class JavaCount {
-    public static void main(String[] args) {/*
+    public static void main(String[] args) {
         //获取SparkCOntext
         SparkConf sparkConf = new SparkConf().setAppName("sparkCount")
                 .setMaster("local[*]");
@@ -23,8 +23,8 @@ public class JavaCount {
 
         int a = 20;
 
-        //读取数据  通过rdd来划分stage，切分task都是在Driver端执行的，executor里面执行的是序列化之后的task
-        JavaRDD<String> stringJavaRDD = javaSparkContext.textFile("hdfs://bigdata01:8020/count.txt");
+       /* //读取数据  通过rdd来划分stage，切分task都是在Driver端执行的，executor里面执行的是序列化之后的task
+        JavaRDD<String> stringJavaRDD = javaSparkContext.textFile("hdfs://bigdata01:8020/hello.txt");
 
         //进行切分
         JavaRDD<String> allWord = stringJavaRDD.flatMap(new FlatMapFunction<String, String>() {
@@ -61,7 +61,7 @@ public class JavaCount {
         for (Tuple2<String, Integer> stringIntegerTuple2 : collect) {
             System.out.println(stringIntegerTuple2._1);
             System.out.println(stringIntegerTuple2._2);
-        }
-        javaSparkContext.stop();*/
+        }*/
+        javaSparkContext.stop();
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="Maven 1" modules="flink_sql_opt,spark_source_code" />
+    <profile name="Maven 1" modules="flink_hudi_cdc,flink_sql_opt,spark_source_code" />
     <profile name="Maven 2" modules="spark_code">
       <parameters>
         <parameter value="-dependencyfile" />

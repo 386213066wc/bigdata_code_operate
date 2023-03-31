@@ -7,17 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hbase_api" />
-        <module name="Flume_opt" />
-        <module name="hadoop_opt" />
-        <module name="hive_function" />
         <module name="flink_sql_opt" />
-        <module name="kafka_opt" />
         <module name="spark_code" />
-        <module name="zk_opt" />
         <module name="MR_opt" />
         <module name="spark_source_code" />
         <module name="flink_mode" />
         <module name="java_opt" />
+        <module name="Flume_opt" />
+        <module name="hadoop_opt" />
+        <module name="hive_function" />
+        <module name="kafka_opt" />
+        <module name="zk_opt" />
+        <module name="flink_hudi_cdc" />
       </profile>
     </annotationProcessing>
   </component>
