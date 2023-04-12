@@ -25,7 +25,8 @@ public class JoinByJava {
         //  select from user  join order on user.id = order.oid
         JoinOperator.JoinOperatorSets<Tuple2<Integer, String>, Tuple2<Integer, String>> joinStream = sourceStream1.join(sourceStream2);
 
-        JoinOperator.JoinOperatorSets<Tuple2<Integer, String>, Tuple2<Integer, String>>.JoinOperatorSetsPredicate whereStream = joinStream.where(new KeySelector<Tuple2<Integer, String>, Integer>() {
+        JoinOperator.JoinOperatorSets<Tuple2<Integer, String>, Tuple2<Integer, String>>.JoinOperatorSetsPredicate whereStream = joinStream
+                .where(new KeySelector<Tuple2<Integer, String>, Integer>() {
             @Override
             public Integer getKey(Tuple2<Integer, String> value) throws Exception {
                 return value.f0;

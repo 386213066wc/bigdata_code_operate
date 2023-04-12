@@ -11,7 +11,6 @@ import org.apache.flink.util.Collector;
 
 public class TestParallelism {
 
-
     public static void main(String[] args) throws Exception {
         Configuration configuration = new Configuration();
         //获取批量处理执行程序

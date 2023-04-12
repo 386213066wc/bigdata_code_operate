@@ -37,14 +37,14 @@ public class ChangeLogJsonKafka {
 
 
         String kafkaSinkTable  = "CREATE TABLE kafka_gmv " +
-                "(  day_str STRING, gmv DECIMAL(10, 5),primary key (day_str) not enforced )  " +
+                "(  day_str STRING, gmv DECIMAL(10, 5)JoinByJava,primary key (day_str) not enforced )  " +
                 "WITH ( 'connector' = 'upsert-kafka'," +
                 "'properties.bootstrap.servers' = 'bigdata01:9092,bigdata02:9092,bigdata03:9092', " +
                 "'topic' = 'kafka_gmv', " +
                 " 'key.format' = 'json' , 'value.format'='json' )";
 
         String aggregateSQL  = " INSERT INTO kafka_gmv " +
-                "SELECT DATE_FORMAT(order_date, 'yyyy-MM-dd') as day_str, SUM(price) as gmv " +
+                "SELECT DATE_FORMJoinByJavaAT(order_date, 'yyyy-MM-dd') as day_str, SUM(price) as gmv " +
                 "FROM mysql_orders WHERE order_status = true " +
                 "GROUP BY DATE_FORMAT(order_date, 'yyyy-MM-dd')";
 
